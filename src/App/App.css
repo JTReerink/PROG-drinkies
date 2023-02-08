@@ -24,3 +24,8 @@ body {
   gap: 4rem;
   flex-wrap: wrap;
 }
+@media screen and (max-width: 43.75rem) {
+  #root {
+    padding: 1rem;
+  }
+}

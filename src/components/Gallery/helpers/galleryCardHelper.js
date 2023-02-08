@@ -15,7 +15,7 @@ function getFigures(drinks) {
         }
         iterator++;
         return (
-            <figure className={classToAdd}>
+            <figure key={drink.img} className={classToAdd}>
                 <img src={drink.img} alt={drink.alt} className="galleryCard__img"/>
             </figure>
         )

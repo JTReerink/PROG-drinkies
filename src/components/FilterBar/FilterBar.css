@@ -33,6 +33,12 @@
     font-size: 150%;
     display: inline-block;
     position: relative;
+    text-transform: capitalize;
+}
+
+.filterBar__inputWrapper > label:hover {
+    cursor: pointer;
+    color: darkcyan;
 }
 
 .filterBar__inputWrapper > label::after {
@@ -53,3 +59,15 @@
     transform-origin: bottom left;
 }
 
+@media screen and (max-width: 42.75rem) {
+    .filterBar {
+        height: auto;
+        padding: 2rem;
+    }
+    .filterBar__wrapper {
+        width: 100vw;
+        align-items: center;
+        justify-content: flex-start;
+        height: 100%;
+    }
+}

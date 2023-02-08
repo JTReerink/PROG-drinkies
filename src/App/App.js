@@ -14,7 +14,7 @@ const App = () => {
         let types = ["beer", "wine", "other"]
 
         const cardsToRender = items.map(drinkCollection => {
-            let temp = <GalleryCard type={types[i]} drinks={drinkCollection} />
+            let temp = <GalleryCard key={types[i]} type={types[i]} drinks={drinkCollection} />
             i++
             return temp
         })
@@ -24,7 +24,8 @@ const App = () => {
     }, [])
 
     const onFilter = (props) => {
-        const cardToRender = defaultDrinks.filter(card => {
+        const copy = [...defaultDrinks]
+        const cardToRender = copy.filter(card => {
             if(card.props.type === props) {
                 return card;
             }

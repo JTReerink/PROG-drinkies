@@ -23,12 +23,12 @@ const FilterBar = ({onFilter}) => {
         setLabels(teBeRenderedLabels);
     }, [])
     const teBeRenderedLabels = labels.map(label => {
-        let input = <input unchecked onChange={() => filterDrink(label.name)} type="checkbox" name="" id={label.name} className="filterBar__checkbox"/>
+        let input = <input onChange={() => filterDrink(label.name)} type="checkbox" name="" id={label.name} className="filterBar__checkbox"/>
         if(label.checked){
             input = <input checked onChange={() => filterDrink(label.name)} type="checkbox" name="" id={label.name} className="filterBar__checkbox"/>
         }
         return (
-            <div className="filterBar__inputWrapper">
+            <div key={label.name} className="filterBar__inputWrapper">
                 {input}
                 <label htmlFor={label.name}>{label.name}</label>
             </div>
