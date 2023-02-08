@@ -2,15 +2,41 @@ import './App.css';
 import GalleryCard from "../components/Gallery/GalleryCard";
 import items from "../data/items";
 import FilterBar from "../components/FilterBar/FilterBar";
+import {useEffect, useState} from "react";
 
 const App = () => {
 
+    const [defaultDrinks, setDefaultDrinks] = useState([])
+    const [drinks, setDrinks] = useState([]);
+
+    useEffect(() => {
+        let i = 0;
+        let types = ["beer", "wine", "other"]
+
+        const cardsToRender = items.map(drinkCollection => {
+            let temp = <GalleryCard type={types[i]} drinks={drinkCollection} />
+            i++
+            return temp
+        })
+        setDrinks(cardsToRender)
+        setDefaultDrinks(cardsToRender);
+
+    }, [])
+
+    const onFilter = (props) => {
+        const cardToRender = defaultDrinks.filter(card => {
+            if(card.props.type === props) {
+                return card;
+            }
+        })
+        setDrinks([cardToRender])
+    }
+
+
     return (
         <>
-            <FilterBar></FilterBar>
-            <GalleryCard drinks={items.beer}></GalleryCard>
-            <GalleryCard drinks={items.wine}></GalleryCard>
-            <GalleryCard drinks={items.other}></GalleryCard>
+            <FilterBar onFilter={onFilter}></FilterBar>
+            {drinks}
         </>
     );
 }

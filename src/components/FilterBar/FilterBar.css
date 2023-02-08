@@ -1,11 +1,12 @@
 .filterBar {
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: min(10rem,10vh);
     width: 100vw;
-    background: white;
+    background: rgba(255,255,255,.4);
+    backdrop-filter: blur(3px);
 }
 
 .filterBar__wrapper {
@@ -16,3 +17,39 @@
     justify-content: space-between;
     height: 100%;
 }
+
+.filterBar__inputWrapper {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    user-select: none;
+}
+
+.filterBar__inputWrapper > input {
+    appearance: none;
+}
+
+.filterBar__inputWrapper > label {
+    font-size: 150%;
+    display: inline-block;
+    position: relative;
+}
+
+.filterBar__inputWrapper > label::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.filterBar__inputWrapper > input:checked + label::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
