@@ -1,0 +1,44 @@
+.productpage {
+    width: 60vw;
+    background: white;
+
+}
+.productpage__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.productpage__listItem {
+    height: 10rem;
+    display: grid;
+    padding: 2rem;
+    gap: 2rem;
+    align-items: center;
+    grid-template-columns: 20% 20% 30% 30%;
+}
+
+.productpage__listItem > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.productpage__listItem > button {
+    outline: none;
+    border: none;
+    background: darkcyan;
+    width: 15rem;
+    padding: 1rem;
+    color: white;
+    font-size: 80%;
+    transition: all .2s;
+}
+
+.productpage__listItem > button:hover {
+    cursor: pointer;
+    background: white;
+    color: darkcyan;
+    border: .2rem solid darkcyan;
+}
