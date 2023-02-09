@@ -1,6 +1,25 @@
+.home__holder {
+    width: 100%;
+    text-align: center;
+    height: 5rem;
+}
+
+.home {
+    font-size: 150%;
+    text-decoration: none;
+    color: black;
+}
+
+.home:hover {
+    text-decoration: underline;
+}
+
+.home:visited {
+    color: black;
+}
+
 .productpage {
     width: 60vw;
-    background: white;
 
 }
 .productpage__list {
@@ -8,6 +27,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    background: white;
 }
 
 .productpage__listItem {

@@ -1,6 +1,6 @@
 import "./Productpage.css";
 import {useEffect} from "react";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 const Productpage = (props) => {
 
@@ -22,12 +22,15 @@ const Productpage = (props) => {
                 <img src={item.img} alt={item.alt}/>
                 <p>{item.name}</p>
                 <p>{item.description}</p>
-                <button>Add to Cart</button>
+                <button onClick={props.addToCart}>Add to Cart</button>
             </li>
         )
     })
     return (
         <article className="productpage">
+            <div className="home__holder">
+                <Link className="home" to={"/"}>HOME</Link>
+            </div>
             <ul className="productpage__list">
                 {toBeRendered}
             </ul>

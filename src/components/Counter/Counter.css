@@ -1,0 +1,13 @@
+.counter__holder {
+    position: fixed;
+    top: 7rem;
+    right: 8rem;
+    width: 7rem;
+    aspect-ratio: 1/1;
+    background: linear-gradient(to bottom, #DECBA4 10%, #3E5151);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
