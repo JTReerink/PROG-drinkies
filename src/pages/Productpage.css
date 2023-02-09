@@ -11,7 +11,7 @@
 }
 
 .productpage__listItem {
-    height: 10rem;
+    height: 30rem;
     display: grid;
     padding: 2rem;
     gap: 2rem;
@@ -41,4 +41,17 @@
     background: white;
     color: darkcyan;
     border: .2rem solid darkcyan;
+}
+
+@media screen and (max-width: 81.75rem){
+    .productpage{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 50rem){
+    .productpage__listItem{
+        height: 30rem;
+        grid-template-columns: 100%;
+        grid-template-rows: 60% 5% 20% 10%;
+    }
 }
